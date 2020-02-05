@@ -1,0 +1,4 @@
+"""
+Package for the application.
+"""
+
