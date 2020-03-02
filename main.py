@@ -57,7 +57,7 @@ def monitorStop():
     """
 
     airmon_ng("stop", interface_wifi).exit_code == 0
-    # En fonction de l'OS, permet de relancer les interfaces
+    # En fonction de l'OS, permet de relancer les interfaces réseaux
     # service("network-manager", "start").exit_code == 0
 
 

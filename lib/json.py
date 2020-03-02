@@ -47,7 +47,7 @@ def verif_and_construction_json(queue_beacon_sie):
         data = trame[scapy.Dot11EltVendorSpecific].info[1:]
         
         try:
-            if vs_type == vs_protocole and len(str(trame[scapy.Dot11EltVendorSpecific].info)) > 70: # taille minimale de la trame
+            if vs_type == vs_protocole and len(str(trame[scapy.Dot11EltVendorSpecific].info)) > 30: # taille minimale de la trame
 
                 t = 0
                 l = 0
@@ -59,7 +59,7 @@ def verif_and_construction_json(queue_beacon_sie):
                         l = ord(data[1:2])
                         hopl = 2 + l
 
-                    except TypeError:
+                    except TypeError as err:
                         break
 
                     try:
@@ -100,7 +100,8 @@ def verif_and_construction_json(queue_beacon_sie):
                             v = int.from_bytes(data[2:hopl], byteorder="big", signed=False)
                             data = data[hopl:]
 
-                    except TypeError:
+                    except TypeError as err:
+                        print(err)
                         break
 
                     """
@@ -128,6 +129,8 @@ def verif_and_construction_json(queue_beacon_sie):
                 
         
         except AttributeError as err:
-            break
+            print(err)
+            pass
         except TypeError as err:
-            break
+            print(err)
+            pass
