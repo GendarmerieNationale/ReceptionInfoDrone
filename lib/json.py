@@ -44,7 +44,7 @@ def verif_and_construction_json(queue_beacon_sie):
         vs_type = (trame[scapy.Dot11EltVendorSpecific].info[3:4])     # vs_type de la trame
         
         dataDict = {}
-        data = trame[scapy.Dot11EltVendorSpecific].info[1:]
+        data = trame[scapy.Dot11EltVendorSpecific].info[4:]  # start after OUI+VS_TYPE
         
         try:
             if vs_type == vs_protocole and len(str(trame[scapy.Dot11EltVendorSpecific].info)) > 30: # taille minimale de la trame
