@@ -1,4 +1,5 @@
-ReceptionInfoDrone est distribué sous double licence CeCILL v2.1 & GPL v2 ///// 4|*13
+ReceptionInfoDrone est distribué sous double licence CeCILL v2.1 & GPL v2
+hormis la librairie lib/scapy distribuée sous licence GPL version 2 uniquement
 
 --------------------------------------------------------------------------
 
