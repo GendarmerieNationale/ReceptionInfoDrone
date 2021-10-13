@@ -16,8 +16,6 @@
 # Importation des modules
 import lib.scapy.all as scapy
 
-from lib.sh.sh import service
-
 # Librairies natives Python
 import json
 import time
