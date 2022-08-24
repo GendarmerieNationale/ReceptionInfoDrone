@@ -35,7 +35,7 @@ def verif_and_construction_json(queue_beacon_sie):
     """
         Fonction qui vérifie ID et le protocole,
         puis décode le TLV.
-        Consrtuit après un JSON.
+        Construit après un JSON.
     """
 
     vs_protocole = b'\x01'   # vs_type du protocole fixé à 0x01 en binaire
@@ -85,7 +85,7 @@ def verif_and_construction_json(queue_beacon_sie):
 
                             elif t == 4 or t == 5 or t == 8 or t == 9:
                                 """
-                                    Conversion bytes vers float avec présicion de 5 chiffres apres la virgule.
+                                    Conversion bytes vers float avec précision de 5 chiffres après la virgule.
                                     On récupère la data en Bytes on la passe en int signé.
                                     type 4 et 5 pour latitude et longitude.
                                     type 8 et 9 pour latitude de départ et longitude de départ.
@@ -105,7 +105,7 @@ def verif_and_construction_json(queue_beacon_sie):
                             elif t == 10 or t == 11 or t == 1:
                                 """
                                     Conversion bytes vers int.
-                                    On récupère la data en Bytes on la passe en int  non signé
+                                    On récupère la data en Bytes on la passe en int non signé
                                     Type 10 et 11 pour la vitesse et la direction en degrés.
                                 """
                                 v = int.from_bytes(data[2:hopl], byteorder="big", signed=False)
