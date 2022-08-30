@@ -4,7 +4,7 @@
     ##Projet SIE ##
 
     Version 1 fait en juin-septembre 2019
-    Par Gendarmerie Nationnale, STSISI, SIRD
+    Par Gendarmerie Nationale, STSISI, SIRD
 
     sniff.py est un processus qui analyse le réseau wifi et envoie les trames Beacon à une file.
 
@@ -27,7 +27,7 @@ def put_in_queue_beacon(queue_beacon_sie, trameBeacon):
         Fonction qui met la trame Beacon du drone dans la file queue_beacon_sie
         et qui supprime le dernier élément en cas de file pleine.
         Ce qui évite de surcharger les files.
-        Trie également si le Vendor Sprecific à un OUI/CID et s'il est égal à 6A-5C-35.
+        Trie également si le Vendor Specific à un OUI/CID et s'il est égal à 6A-5C-35.
     """
     cid = 6970421  # Numéro CID unique pour les drones correspond à 6A-5C-35 en hexa
     
@@ -51,9 +51,9 @@ def put_in_queue_beacon(queue_beacon_sie, trameBeacon):
 
 def sniffer(queue_beacon, interface_wifi):
     """
-        Pour l'analyseur réseau, on passe à scapy la fonction "put_in_queue_beacon" en attibut,
-        count=0 pour sniffer en permanance,
-        et fait un trie sur type 0 et sous-type 8 pour sniffer que les trames Beacon.
+        Pour l'analyseur réseau, on passe à scapy la fonction "put_in_queue_beacon" en attribut,
+        count=0 pour sniffer en permanence,
+        et fait un tri sur type 0 et sous-type 8 pour ne sniffer que les trames Beacon.
     """
 
     scapy.sniff(iface=interface_wifi,
