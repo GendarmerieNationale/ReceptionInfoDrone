@@ -17,7 +17,7 @@
 import lib.sniff
 import lib.json
 
-from lib.sh.sh import airmon_ng, service
+from lib.sh.sh import airmon_ng
 
 # Librairies natives Python
 import sys
@@ -53,12 +53,10 @@ def monitorStart():
 
 def monitorStop():
     """
-        Fonction qui stoppe le mode monitor et lance l'interface d'origine.
+        Fonction qui stoppe le mode monitor.
     """
 
     airmon_ng("stop", interface_wifi).exit_code == 0
-    # En fonction de l'OS, permet de relancer les interfaces réseaux
-    # service("network-manager", "start").exit_code == 0
 
 
 def signal_handler(signal, frame):
